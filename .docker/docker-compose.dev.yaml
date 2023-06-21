@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  fontlay-be:
+    build:
+      context: ../
+      dockerfile: .docker/Dockerfile
+    container_name: fontlay-be
+    restart: always
+    networks:
+      - nyt
+    env_file:
+      - '.env.dev'
+
+  nginx:
+    image: nginx:alpine3.17
+    container_name: nginx
+    restart: always
+    ports:
+      - '8081:80'
+    volumes:
+      - ../nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+      - ../nginx/fontlay-stage.conf:/etc/nginx/conf.d/default.conf:ro
+    networks:
+      - nyt
+
+networks:
+  nyt:
+    external: true

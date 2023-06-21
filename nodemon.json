@@ -1,0 +1,11 @@
+{
+  "restartable": "rs",
+  "verbose": false,
+  "watch": ["src", "conf"],
+  "ext": ".ts, .js",
+  "ignore": [".git", "node_modules/**", "*.md", "vercel.json"],
+  "exec": "ts-node src",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}

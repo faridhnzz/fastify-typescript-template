@@ -1,0 +1,26 @@
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "test"],
+  "compilerOptions": {
+    "target": "es2020",
+    "lib": ["esnext"],
+    "module": "commonjs",
+    "rootDirs": ["src"],
+    "baseUrl": ".",
+    "outDir": "dist",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "pretty": true
+  },
+  "ts-node": {
+    "swc": true
+  }
+}
